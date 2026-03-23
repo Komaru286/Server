@@ -3,7 +3,7 @@ import 'dotenv/config' // import одного экземпляра - import {Seq
 import { sequelize } from './db.js'
 import cors from "cors"
 import router from "./routes/router.js" // import главного роутера
-import errorHandler from './middle ware/error-landler.js'
+import errorHandler from './middle_ware/errorHandler.js'
 
 // константы приложения(app) и порт
 const app = express() 

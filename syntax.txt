@@ -19,6 +19,13 @@ id: {
 "unique" - не повторяются
 "+ rating: decimal (0)" - "0" в скобках - изначальный рейтиг, в данном случае он = 0
 
+client: 
++ id: integer(PK)
++ name: string
+- email: varchar(unique)
++ rating: decimal (0)
+- bday: dateonly
+
 product:
 + id: integer(PK)
 + name: string
