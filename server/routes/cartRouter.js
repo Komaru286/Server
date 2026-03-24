@@ -10,4 +10,4 @@ router.get('/:id', getOneCart)
 router.delete('/:id', deleteCart)
 router.put('/:id', updateCart)
 
-export default Router
+export default router

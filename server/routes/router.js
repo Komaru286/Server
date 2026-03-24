@@ -6,9 +6,13 @@ import cartRouter from "./cartRouter.js"
 
 const router = new Router()
 
-export default router
+router.use("/clients", clientRouter)
+router.use("/products", productRouter)
+router.use("/orders", orderRouter)
+router.use("/carts", cartRouter)
 
-router.use("/clients/", clientRouter)
-router.use("/Products/", productRouter)
-router.use("/Orders/", orderRouter)
-router.use("/Carts/", cartRouter)
+router.get('/', (req, res) => {
+    res.send('API работает');
+});
+
+export default router

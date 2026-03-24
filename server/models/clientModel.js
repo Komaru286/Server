@@ -1,4 +1,4 @@
-import { sequelize } from "../db.js";
+import sequelize from "../db.js";
 import { DataTypes } from "sequelize";
 
 export const Client = sequelize.define(
@@ -9,7 +9,7 @@ export const Client = sequelize.define(
             autoIncrement: true,
             primaryKey: true
         },
-        Name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },

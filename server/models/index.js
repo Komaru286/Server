@@ -1,4 +1,4 @@
-import { sequelize } from "../db.js";
+import sequelize from "../db.js";
 import { Cart } from "./CartModel.js"
 import { Client } from "./clientModel.js"
 import { Order } from "./OrderModel.js"

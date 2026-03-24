@@ -2,6 +2,7 @@ import { Client } from '../models/clientModel.js'
 
 // http-get метод
 export const getAllClients = async (req, res, next) => {
+    console.log("Получение всех клиентов");
     try {
         const getAllClients = await Client.findAll() // SELECT * from CLIENTS
         res.status(200).json(getAllClients)
@@ -15,6 +16,8 @@ export const getAllClients = async (req, res, next) => {
 export const createClient = async (req, res, next) => {
     try {
         const { name, email, rating, bday } = req.body
+
+        console.log(req.body)
 
         const newClient = await Client.create( {name, email, rating, bday} )
         res.status(201).json(newClient)

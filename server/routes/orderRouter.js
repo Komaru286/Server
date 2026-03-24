@@ -11,4 +11,4 @@ router.delete('/:id', deleteOrder)
 router.put('/:id', updateOrder)
 router.patch("/:id", updateOrderStatus)
 
-export default Router
+export default router

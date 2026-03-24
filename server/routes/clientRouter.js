@@ -11,4 +11,4 @@ router.delete('/:id', deleteClient)
 router.put('/:id', updateClient)
 router.patch("/:id", updateClientStatus)
 
-export default Router
+export default router

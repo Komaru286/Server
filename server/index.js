@@ -1,6 +1,6 @@
 import express from 'express' // создание экземпляра express из внешнего express
 import 'dotenv/config' // import одного экземпляра - import {Sequelize} from 'sequelize'
-import { sequelize } from './db.js'
+import sequelize from './db.js'
 import cors from "cors"
 import router from "./routes/router.js" // import главного роутера
 import errorHandler from './middle_ware/errorHandler.js'
@@ -19,16 +19,20 @@ app.use(errorHandler)
 
 const startServer = async () => {
     try {
-        app.listen(port, () => {
-            console.log(`Раб http://localhost:${port}`)
-        })
         await sequelize.authenticate(); // подключает сервер к Бд через sequelize(db.js)
         console.log("Connect saccesfull");
         await sequelize.sync({alter: true})
+        app.listen(port, () => {
+            console.log(`Раб http://localhost:${port}`)
+        })
     } catch (error) {
         console.log("Unable to connect", error);
         console.log("Модели не синхрон")
     }
 }
+
+app.get("/", (req, res) => {
+    res.send("Serv is work")
+})
 
 startServer()
