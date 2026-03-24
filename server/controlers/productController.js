@@ -14,9 +14,9 @@ export const getAllProducts = async (req, res, next) => {
 
 export const createProduct = async (req, res, next) => {
     try {
-        const { name, price } = req.body
+        const { Name, price } = req.body
 
-        const newProduct = await Product.create( {name, price} ) 
+        const newProduct = await Product.create( {Name, price} ) 
         res.status(201).json(newProduct)
     } catch (err) {
         next(err)
